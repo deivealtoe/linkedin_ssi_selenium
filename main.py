@@ -71,19 +71,25 @@ def get_data(chrome_drive):
 
     return data_dict
 
+def get_linkedin_login_url():
+    return 'https://www.linkedin.com/uas/login'
+
+def get_linked_ssi_url():
+    return 'https://www.linkedin.com/sales/ssi'
+
 
 if __name__ == '__main__':
     service = Service(get_chromedriver_fullpath())
     options = webdriver.ChromeOptions()
     chrome_drive = webdriver.Chrome(service=service, options=options)
 
-    chrome_drive.get('https://www.linkedin.com/uas/login')
+    chrome_drive.get(get_linkedin_login_url())
 
     set_input_fields(chrome_drive)
 
     submit_form(chrome_drive)
 
-    chrome_drive.get('https://www.linkedin.com/sales/ssi')
+    chrome_drive.get(get_linked_ssi_url())
 
     show_data(get_data(chrome_drive))
     
