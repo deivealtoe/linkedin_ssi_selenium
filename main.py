@@ -71,8 +71,10 @@ def get_data(chrome_drive):
 
     return data_dict
 
+
 def get_linkedin_login_url():
     return 'https://www.linkedin.com/uas/login'
+
 
 def get_linked_ssi_url():
     return 'https://www.linkedin.com/sales/ssi'
