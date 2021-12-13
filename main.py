@@ -79,9 +79,7 @@ def get_linked_ssi_url():
 
 
 if __name__ == '__main__':
-    service = Service(get_chromedriver_fullpath())
-    options = webdriver.ChromeOptions()
-    chrome_drive = webdriver.Chrome(service=service, options=options)
+    chrome_drive = webdriver.Chrome(service=Service(get_chromedriver_fullpath()), options=webdriver.ChromeOptions())
 
     chrome_drive.get(get_linkedin_login_url())
 
